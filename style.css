@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ 
+.mainContainer{
+    background:url("./Assets/Bg.jpg");
+    min-width:100vw;
+    min-height:100vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+#board{
+    background:linear-gradient(#e99effc2,#5a5977a3);
+    width:90vmin;
+    height:90vmin;
+    border:2px solid black;
+    display:grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+}
+
+.head{
+    background-color: red;
+}
+.food{background-color: pink;}
