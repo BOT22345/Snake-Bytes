@@ -2,7 +2,7 @@
 let direction={x:0,y:0}
 const foodsound=new Audio('./Assets/sounds/food.mp3');
 const gameover=new Audio('./Assets/sounds/gameover.mp3');
-const moveSound=new Audio('./Assets/move.mp3');
+const moveSound=new Audio('./Assets/sounds/move.mp3');
 const music=new Audio('./Assets/music.mp3');
 let speed=2;
 let lastPaintTime=0;
@@ -55,3 +55,36 @@ function gameEngine(){
 
 //Main Logic
 window.requestAnimationFrame(main);
+window.addEventListener('keydown',e=>{
+    inputDir={x:0,y:1}// start the game 
+    moveSound.play();
+    switch (e.key) {
+        case "ArrowUp":
+            console.log("up")
+            inputDir.x=0;
+            inputDir.y=-1;
+
+            break;
+        case "ArrowDown":
+            console.log("down")
+            inputDir.x=0;
+            inputDir.y=1;
+
+            break;
+        case "ArrowLeft":
+            console.log("left")
+            inputDir.x=-1;
+            inputDir.y=0;
+
+            break;
+        case "ArrowRight":
+            console.log("right")
+            inputDir.x=1;
+            inputDir.y=0;
+
+            break;
+    
+        default:
+            break;
+    }
+})
