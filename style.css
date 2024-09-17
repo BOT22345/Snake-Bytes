@@ -24,6 +24,12 @@
 }
 
 .head{
+    background-color: black;
+}
+.snake{
     background-color: red;
 }
-.food{background-color: pink;}
+.food{
+    border-radius: 100px;
+    background-color: white;
+}

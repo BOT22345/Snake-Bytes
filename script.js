@@ -7,8 +7,11 @@ const music=new Audio('./Assets/music.mp3');
 let speed=2;
 let lastPaintTime=0;
 let snakeArr=[
-    {x:13, y:15}  
+    {x:2, y:15},
+    
 ]
+food={x:4, y:15}
+
 
 //Game Functions
 function main(ctime){
@@ -23,7 +26,27 @@ function main(ctime){
 function gameEngine(){
     // updating snake array
 
-    //rendering the food
+    //rendering the food and snake
+    //Display snake
+    board.innerHTML="";
+    snakeArr.forEach((e,index)=>{
+        snakeElement=document.createElement('div');
+        snakeElement.style.gridRowStart=e.y
+        snakeElement.style.gridColumnStart=e.x
+        if(index===0){
+            snakeElement.classList.add('head');
+        }
+        else{
+            snakeElement.classList.add('snake');
+        }
+        board.appendChild(snakeElement)
+    })
+    //Display food
+    foodElement=document.createElement('div');
+    foodElement.style.gridRowStart=food.y
+    foodElement.style.gridColumnStart=food.x
+    foodElement.classList.add('food');
+    board.appendChild(foodElement)
 }
 
 
