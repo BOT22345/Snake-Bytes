@@ -1,10 +1,11 @@
 //intializing variables 
-let direction={x:0,y:0}
+let inputDir={x:0,y:0}
 const foodsound=new Audio('./Assets/sounds/food.mp3');
 const gameover=new Audio('./Assets/sounds/gameover.mp3');
 const moveSound=new Audio('./Assets/sounds/move.mp3');
 const music=new Audio('./Assets/music.mp3');
 let speed=2;
+let score=0;
 let lastPaintTime=0;
 let snakeArr=[
     {x:2, y:15},
@@ -23,8 +24,30 @@ function main(ctime){
     gameEngine();
 }
 
+function isCollide(sarr){
+    return false;
+}
+
 function gameEngine(){
     // updating snake array
+
+    if(isCollide(snakeArr)){
+        gameover.play();
+        musicSound.play();
+        inputDir={x:0,y:0}
+        alert("game over press any key to play again ")
+        snakeArr=[{x:2, y:15}]
+        musicSound.play();
+        score=0;
+    }
+
+    //snake body increase and score updation
+    if(snakeArr[0].y===food.y && snake[0].x===food.x){
+        snakeArr.unshift({x:snakeArr[0].x + inputDir.x,y:snakeArr[0].y+inputDir.y})
+        let a=2;
+        let b=16;
+        food={x:Math.round(a+(b-a)*Math.random()),y:Math.round(a+(b-a)*Math.random())}
+    }
 
     //rendering the food and snake
     //Display snake
