@@ -23,11 +23,17 @@
     grid-template-columns: repeat(18,1fr);
 }
 
+
 .head{
-    background-color: black;
+    /* background-color: black; */
+    background:url("./Assets/snakeHead.png");
+    background-size: 90px;
+    background-repeat: no-repeat;   
+    background-position:center;
+    transform:rotate(-90deg);
 }
 .snake{
-    background-color: red;
+    background-color: #ff0000;
 }
 .food{
     border-radius: 100px;
