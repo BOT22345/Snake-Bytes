@@ -66,7 +66,7 @@ function gameEngine(){
         snakeArr[i+1]={...snakeArr[i]};
     }
 
-    snakeArr[0].x += inputDir.x;
+    snakeArr[0].x = snakeArr[0].x + (inputDir.x);
     snakeArr[0].y += inputDir.y;
 
     //rendering the food and snake

@@ -26,16 +26,23 @@
 
 .head{
     /* background-color: black; */
-    background:url("./Assets/snakeHead.png");
+    background:url("./Assets/snakeHead1_2.png");
     background-size: 90px;
     background-repeat: no-repeat;   
     background-position:center;
     transform:rotate(-90deg);
 }
 .snake{
-    background-color: #ff0000;
+    /* background:linear-gradient(#0a2e088a,#666c69a3),url("./Assets/body.jpg"); */
+    background:linear-gradient(#0b3808ba,#56df9aa3),url("./Assets/body.jpg");
+    /* background: url("./Assets/body.jpg"); */
+    background-size:cover;
+    background-position:center;
+    border-radius:12px;
 }
 .food{
-    border-radius: 100px;
-    background-color: white;
+    background: url("./Assets/food.jpg");
+    background-size:90px;
+    background-repeat: no-repeat;   
+    background-position:center;
 }
