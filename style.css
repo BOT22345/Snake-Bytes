@@ -30,7 +30,7 @@
     background-size: 90px;
     background-repeat: no-repeat;   
     background-position:center;
-    transform:rotate(-90deg);
+    /* transform:rotate(-90deg); */
 }
 .snake{
     /* background:linear-gradient(#0a2e088a,#666c69a3),url("./Assets/body.jpg"); */

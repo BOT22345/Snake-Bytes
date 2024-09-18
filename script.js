@@ -4,6 +4,7 @@ const foodsound=new Audio('./Assets/sounds/food.mp3');
 const gameover=new Audio('./Assets/sounds/gameover.mp3');
 const moveSound=new Audio('./Assets/sounds/move.mp3');
 const music=new Audio('./Assets/sounds/music.mp3');
+const headRotation=document.querySelector(".head");
 let speed=4;
 let score=0;
 let lastPaintTime=0;
@@ -43,10 +44,12 @@ function gameEngine(){
     // updating snake array
 
     if(isCollide(snakeArr)){
+        setTimeout(()=>{
+            alert("game over press any key to play again ")
+        },200)
         gameover.play();
         music.pause();
         inputDir={x:0,y:0}
-        alert("game over press any key to play again ")
         snakeArr=[{x:2, y:15}]
         // music.play();
         score=0;
@@ -78,6 +81,15 @@ function gameEngine(){
         snakeElement.style.gridColumnStart=e.x
         if(index===0){
             snakeElement.classList.add('head');
+            if (inputDir.x === 1 && inputDir.y === 0) {
+                snakeElement.style.transform = "rotate(270deg)"; 
+            } else if (inputDir.x === -1 && inputDir.y === 0) {
+                snakeElement.style.transform = "rotate(90deg)"; 
+            } else if (inputDir.x === 0 && inputDir.y === 1) {
+                snakeElement.style.transform = "rotate(0deg)"; 
+            } else if (inputDir.x === 0 && inputDir.y === -1) {
+                snakeElement.style.transform = "rotate(180deg)"; 
+            }
         }
         else{
             snakeElement.classList.add('snake');
@@ -107,12 +119,12 @@ window.addEventListener('keydown',e=>{
             console.log("up")
             inputDir.x=0;
             inputDir.y=-1;
-
             break;
         case "ArrowDown":
             console.log("down")
             inputDir.x=0;
             inputDir.y=1;
+
 
             break;
         case "ArrowLeft":
@@ -125,6 +137,7 @@ window.addEventListener('keydown',e=>{
             console.log("right")
             inputDir.x=1;
             inputDir.y=0;
+
 
             break;
     
