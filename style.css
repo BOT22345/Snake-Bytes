@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -23,6 +24,28 @@
     grid-template-columns: repeat(18,1fr);
 }
 
+#scoreBox{
+    position:absolute;
+    top:20px;
+    right:200px;
+    font-size:39px;
+    font-weight:bold;
+    color:white;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#maxScoreBox{
+    position:absolute;
+    top:60px;
+    right:80px;
+    font-size:39px;
+    font-weight:bold;
+    color:white;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .head{
     /* background-color: black; */

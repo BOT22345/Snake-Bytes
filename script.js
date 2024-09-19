@@ -5,8 +5,12 @@ const gameover=new Audio('./Assets/sounds/gameover.mp3');
 const moveSound=new Audio('./Assets/sounds/move.mp3');
 const music=new Audio('./Assets/sounds/music.mp3');
 const headRotation=document.querySelector(".head");
-let speed=4;
+const scoreBox = document.getElementById("scoreBox");
+const maxScoreBox = document.getElementById("maxScoreBox");
+
+let speed=8;
 let score=0;
+let maxScore=localStorage.getItem("MaxScore");
 let lastPaintTime=0;
 let snakeArr=[
     {x:2, y:15},
@@ -58,6 +62,13 @@ function gameEngine(){
     //snake body increase and score updation
     if(snakeArr[0].y===food.y && snakeArr[0].x===food.x){
         foodsound.play();
+        score +=1;
+        scoreBox.innerHTML=`Score = ${score}`;
+        if(maxScore<score){
+        maxScore=score
+        localStorage.setItem("MaxScore",maxScore)
+        }
+        maxScoreBox.innerHTML=`Your Highest = ${maxScore}`
         snakeArr.unshift({x:snakeArr[0].x + inputDir.x,y:snakeArr[0].y+inputDir.y})
         let a=2;
         let b=16;
